@@ -20,27 +20,54 @@
 	mysqli_select_db($conexion,$db_nombre) or die("No se encuentra la base de datos");
 
 	mysqli_set_charset($conexion,"utf8");//linea que permite mostrar tildes en las consultas de la bd
-	$consulta="select * from datos_personales";
+	$consulta="select * from productos";
 
 	$resultado=mysqli_query($conexion,$consulta);
 
-
+echo "<table>";
+echo "<caption>productos</caption>";
+echo 	"<tr>";
+echo 		"<th>Codigo Articulo</th>";
+echo 		"<th>Seccion</th>";
+echo 		"<th>Nombre articulo</th>";
+echo 		"<th>Precio</th>";
+echo 		"<th>Fecha</th>";
+echo 		"<th>Importado</th>";
+echo 		"<th>Pais de origen</th>";
+echo 	"</tr>";
 	while(($fila=mysqli_fetch_row($resultado))==true){
 	
 	//$fila=mysqli_fetch_row($resultado);
 
+
+echo 	"<tr>";
+echo 		"<td>" . $fila[0]. "</td>";
+echo		"<td>" . $fila[1]. "</td>";
+echo		"<td>" . $fila[2]. "</td>";
+echo		"<td>" . $fila[3]. "</td>";
+echo		"<td>" . $fila[4]. "</td>";
+echo		"<td>" . $fila[5]. "</td>";
+echo		"<td>" . $fila[6]. "</td>";
+echo 	"</tr>";
+
+/*
 	echo $fila[0]. " ";
 	echo $fila[1]. " ";
 	echo $fila[2]. " ";
 	echo $fila[3]. " ";
+	echo $fila[4]. " ";
+	echo $fila[5]. " ";
+	echo $fila[6]. " ";
 
 	echo "<br>";
 	//$registros++;
+*/
 	}
-
+echo "</table>";
 
 /*
-	$fila=mysqli_fetch_row($resultado);
+//lee un registro por cada llamada de la funcion fetch
+	$fila=mysqli_fetch_row($resultado);//lee el primer registro
 
 	echo $fila[0]. " ";
 	echo $fila[1]. " ";
@@ -49,7 +76,7 @@
 
 	echo "<br>";
 
-	$fila=mysqli_fetch_row($resultado);//lee un registro por llamada
+	$fila=mysqli_fetch_row($resultado);//lee el segundo registro
 
 	echo $fila[0]. " ";
 	echo $fila[1]. " ";
@@ -59,7 +86,7 @@
 
 
 //	}
-	mysqli_close($conexion);
+	mysqli_close($conexion);//cerrar conecion
 ?>
 </body>
 </html>
