@@ -9,17 +9,19 @@
 
 
 	$db_host="localhost";
-	$db_nombre="pruebas";
+	$db_nombre="pruebassss";
 	$db_usuario="root";
 	$db_contra="";
 
-	$conexion=mysqli_connect($db_host,$db_usuario,$db_contra,$db_nombre);
+	$conexion=mysqli_connect($db_host,$db_usuario,$db_contra);
 
 	if(mysqli_connect_errno()){
 		echo "Error de  conexion a bd";
 		exit();
 	}
 	else{
+
+	mysqli_select_db($conexion,$db_nombre) or die("No se encuentra la base de datos");
 
 	mysqli_set_charset($conexion,"utf8");//linea que permite mostrar tildes en las consultas de la bd
 	$consulta="select * from datos_personales";
