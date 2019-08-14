@@ -41,6 +41,8 @@
 	echo "<br>";
 	//$registros++;
 	}
+
+
 /*
 	$fila=mysqli_fetch_row($resultado);
 
@@ -61,7 +63,7 @@
 
 
 //	}
-
+	mysqli_close($conexion);
 ?>
 </body>
 </html>
