@@ -15,6 +15,13 @@
 
 	$conexion=mysqli_connect($db_host,$db_usuario,$db_contra,$db_nombre);
 
+	if(mysqli_connect_errno()){
+		echo "Error de  conexion a bd";
+		exit();
+	}
+	else{
+
+	mysqli_set_charset($conexion,"utf8");//linea que permite mostrar tildes en las consultas de la bd
 	$consulta="select * from datos_personales";
 
 	$resultado=mysqli_query($conexion,$consulta);
@@ -25,6 +32,8 @@
 	echo $fila[1]. " ";
 	echo $fila[2]. " ";
 	echo $fila[3]. " ";
+
+	}
 
 ?>
 </body>
