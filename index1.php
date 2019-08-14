@@ -36,57 +36,27 @@ echo 		"<th>Fecha</th>";
 echo 		"<th>Importado</th>";
 echo 		"<th>Pais de origen</th>";
 echo 	"</tr>";
-	while(($fila=mysqli_fetch_row($resultado))==true){
+	while($fila=mysqli_fetch_array($resultado,MYSQLI_ASSOC)){
 	
-	//$fila=mysqli_fetch_row($resultado);
-
 
 echo 	"<tr>";
-echo 		"<td>" . $fila[0]. "</td>";
-echo		"<td>" . $fila[1]. "</td>";
-echo		"<td>" . $fila[2]. "</td>";
-echo		"<td>" . $fila[3]. "</td>";
-echo		"<td>" . $fila[4]. "</td>";
-echo		"<td>" . $fila[5]. "</td>";
-echo		"<td>" . $fila[6]. "</td>";
+echo 		"<td>" . $fila['CÓDIGOARTÍCULO']. "</td>";
+echo		"<td>" . $fila['SECCIÓN']. "</td>";
+echo		"<td>" . $fila['NOMBREARTÍCULO']. "</td>";
+echo		"<td>" . $fila['PRECIO']. "</td>";
+echo		"<td>" . $fila['FECHA']. "</td>";
+echo		"<td>" . $fila['IMPORTADO']. "</td>";
+echo		"<td>" . $fila['PAÍSDEORIGEN']. "</td>";
+
 echo 	"</tr>";
 
-/*
-	echo $fila[0]. " ";
-	echo $fila[1]. " ";
-	echo $fila[2]. " ";
-	echo $fila[3]. " ";
-	echo $fila[4]. " ";
-	echo $fila[5]. " ";
-	echo $fila[6]. " ";
 
-	echo "<br>";
-	//$registros++;
-*/
 	}
+
 echo "</table>";
 
-/*
-//lee un registro por cada llamada de la funcion fetch
-	$fila=mysqli_fetch_row($resultado);//lee el primer registro
-
-	echo $fila[0]. " ";
-	echo $fila[1]. " ";
-	echo $fila[2]. " ";
-	echo $fila[3]. " ";
-
-	echo "<br>";
-
-	$fila=mysqli_fetch_row($resultado);//lee el segundo registro
-
-	echo $fila[0]. " ";
-	echo $fila[1]. " ";
-	echo $fila[2]. " ";
-	echo $fila[3]. " ";
-*/
 
 
-//	}
 	mysqli_close($conexion);//cerrar conecion
 ?>
 </body>
