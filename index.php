@@ -20,11 +20,12 @@
 	mysqli_select_db($conexion,$db_nombre) or die("No se encuentra la base de datos");
 
 	mysqli_set_charset($conexion,"utf8");//linea que permite mostrar tildes en las consultas de la bd
-	$consulta="select * from productos";
+	//$consulta="select * from productos";
+	$consulta="select * from productos where paísdeorigen='ESPAÑA'		";
 
 	$resultado=mysqli_query($conexion,$consulta);
 
-echo "<table>";
+echo "<table border=1>";
 echo "<caption>productos</caption>";
 echo 	"<tr>";
 echo 		"<th>Codigo Articulo</th>";
