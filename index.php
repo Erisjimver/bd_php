@@ -19,7 +19,7 @@
 		echo "Error de  conexion a bd";
 		exit();
 	}
-	else{
+	//else{
 
 	mysqli_select_db($conexion,$db_nombre) or die("No se encuentra la base de datos");
 
@@ -28,6 +28,20 @@
 
 	$resultado=mysqli_query($conexion,$consulta);
 
+
+	while(($fila=mysqli_fetch_row($resultado))==true){
+	
+	//$fila=mysqli_fetch_row($resultado);
+
+	echo $fila[0]. " ";
+	echo $fila[1]. " ";
+	echo $fila[2]. " ";
+	echo $fila[3]. " ";
+
+	echo "<br>";
+	//$registros++;
+	}
+/*
 	$fila=mysqli_fetch_row($resultado);
 
 	echo $fila[0]. " ";
@@ -43,8 +57,10 @@
 	echo $fila[1]. " ";
 	echo $fila[2]. " ";
 	echo $fila[3]. " ";
+*/
 
-	}
+
+//	}
 
 ?>
 </body>
