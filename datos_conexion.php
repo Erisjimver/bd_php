@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Base de datos</title>
-</head>
-<body>
 
 <?php
 
-	require("datos_conexion.php");
+
+	$db_host="localhost";
+	$db_nombre="pruebas";
+	$db_usuario="root";
+	$db_contra="";
 
 	$conexion=mysqli_connect($db_host,$db_usuario,$db_contra);
 
@@ -61,5 +59,3 @@
 //	}
 	mysqli_close($conexion);
 ?>
-</body>
-</html>
