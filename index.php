@@ -9,7 +9,7 @@
 
 
 	$db_host="localhost";
-	$db_nombre="pruebassss";
+	$db_nombre="pruebas";
 	$db_usuario="root";
 	$db_contra="";
 
@@ -29,6 +29,15 @@
 	$resultado=mysqli_query($conexion,$consulta);
 
 	$fila=mysqli_fetch_row($resultado);
+
+	echo $fila[0]. " ";
+	echo $fila[1]. " ";
+	echo $fila[2]. " ";
+	echo $fila[3]. " ";
+
+	echo "<br>";
+
+	$fila=mysqli_fetch_row($resultado);//lee un registro por llamada
 
 	echo $fila[0]. " ";
 	echo $fila[1]. " ";
