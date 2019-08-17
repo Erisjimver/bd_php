@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<form action="pagina_actualizacion.php" method="get">
+<form action="resultados_actualizacion.php" method="get">
 	 
 	<label>Buscar:<input type="text" name="buscar"></label>
 
