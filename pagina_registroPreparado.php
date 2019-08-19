@@ -41,14 +41,8 @@
 	}
 	else{
 
-		//$ok=mysqli_stmt_bind_result($resultado,$codigo,$seccion,$precio,$pais);
-
 		echo "Agregado nuevo registro: <br><br>";
-/*
-		while (mysqli_stmt_fetch($resultado)) {
-				echo $codigo . " " . $seccion . " " . $precio . " " . $pais . "<br>";
-		}
-*/
+
 	}
 
 	mysqli_close($conexion);//cerrar conecion
