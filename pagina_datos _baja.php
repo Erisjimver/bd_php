@@ -7,7 +7,8 @@
 
 <?php
 
-	$busqueda=$_GET["buscar"];
+	$usuario=$_GET["usu"];
+	$contra=$_GET["con"];
 
 	require("datos_conexion.php");
 
@@ -25,7 +26,7 @@
 	//$consulta="select * from productos";
 	//$consulta="select * from productos where NOMBREARTÍCULO like '%$busqueda%'";
 
-	$consulta="select * from productos where NOMBREARTÍCULO ='$busqueda'";
+	$consulta="select * from usuarios where usuario='$usuario' and contra='$contra'";
 	
 	echo "$consulta <br><br>";
 
@@ -34,25 +35,20 @@
 echo "<table border=1>";
 echo "<caption>productos</caption>";
 echo 	"<tr>";
-echo 		"<th>Codigo Articulo</th>";
-echo 		"<th>Seccion</th>";
-echo 		"<th>Nombre articulo</th>";
-echo 		"<th>Precio</th>";
-echo 		"<th>Fecha</th>";
-echo 		"<th>Importado</th>";
-echo 		"<th>Pais de origen</th>";
+echo 		"<th>Nombre: </th>";
+echo 		"<th>Contraseña</th>";
+echo 		"<th>Telefono</th>";
+echo 		"<th>Direccion</th>";
+
 echo 	"</tr>";
 	while($fila=mysqli_fetch_array($resultado,MYSQLI_ASSOC)){
 	
 
 echo 	"<tr>";
-echo 		"<td>" . $fila['CÓDIGOARTÍCULO']. "</td>";
-echo		"<td>" . $fila['SECCIÓN']. "</td>";
-echo		"<td>" . $fila['NOMBREARTÍCULO']. "</td>";
-echo		"<td>" . $fila['PRECIO']. "</td>";
-echo		"<td>" . $fila['FECHA']. "</td>";
-echo		"<td>" . $fila['IMPORTADO']. "</td>";
-echo		"<td>" . $fila['PAÍSDEORIGEN']. "</td>";
+echo 		"<td>" . $fila['usuario']. "</td>";
+echo		"<td>" . $fila['contra']. "</td>";
+echo		"<td>" . $fila['tlfno']. "</td>";
+echo		"<td>" . $fila['direccion']. "</td>";
 
 echo 	"</tr>";
 
@@ -67,3 +63,6 @@ echo "</table>";
 ?>
 </body>
 </html>
+
+
+
